@@ -7,4 +7,5 @@ logs
 
 .env
 .env.*
+_site/
 

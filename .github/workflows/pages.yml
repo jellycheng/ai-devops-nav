@@ -28,13 +28,18 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # upload-pages-artifact 的 path 只能是「一个目录」，不能多路径列表
+      - name: Prepare site bundle
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets data _site/
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: |
-            index.html
-            assets
-            data
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deploy
