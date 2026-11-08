@@ -1,4 +1,4 @@
-
+# 前置：Settings → Pages → Source = GitHub Actions
 name: Deploy GitHub Pages
 
 on:
