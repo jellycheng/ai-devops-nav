@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="面向 AI 辅助开发与运维的技术网址导航，覆盖云原生、大前端、质量保障与技术社区等分类，支持搜索筛选，快速直达文档、控制台与常用工具。"
+    />
+    <title>AI 开发运维导航｜技术网址精选一站直达</title>
+    <link rel="stylesheet" href="assets/nav.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1>网址导航</h1>
+        <p>在浩瀚互联中，为你点亮值得前往的坐标。</p>
+      </header>
+
+      <div class="sticky-bar">
+        <div class="toolbar">
+          <div class="search-wrap">
+            <svg
+              class="icon-search"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3-3" />
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="搜索标题、描述或网址…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+          <nav id="filters" class="filters" aria-label="分组筛选"></nav>
+        </div>
+      </div>
+
+      <p id="stats" class="stats" aria-live="polite"></p>
+      <div id="card-sections" class="sections" aria-label="分组导航列表"></div>
+
+      <footer class="page-footer">
+        <p class="footer-note">
+          为 AI 辅助开发与运维：常用入口一站汇聚，检索即达。
+        </p>
+        <p class="footer-disclaimer">收录顺序不分先后，不代表推荐或合作。</p>
+      </footer>
+    </main>
+
+    <script src="data/sites.js"></script>
+    <script src="assets/nav.js"></script>
+  </body>
+</html>
