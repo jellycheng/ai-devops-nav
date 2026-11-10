@@ -1281,6 +1281,16 @@ window.NAV_SITES = [
     group_name: "质量保障",
   },
   {
+    id: "agent-qa",
+    title: "agent-qa",
+    description:
+      "自然语言测试 Web、Android 与 iOS，具备 memidex 持久记忆、验证门控的自我改进及截图证据，支持 CLI / MCP。",
+    url: "https://vostride.com",
+    logo: "https://vostride.com/brand/vostride-pixel-icon-192.png",
+    group_code: "qa",
+    group_name: "质量保障",
+  },
+  {
     id: "github",
     title: "GitHub",
     description: "代码托管、协作与 DevOps 工具链入口。",
