@@ -15,18 +15,17 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+# 上传与部署拆成两个作业：deploy 通过 needs 等待 build 完成，
+# 避免同一作业内工件刚 finalize 就查询导致偶发 "No artifacts named github-pages"。
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       # upload-pages-artifact 的 path 只能是「一个目录」，不能多路径列表
       - name: Prepare site bundle
@@ -41,6 +40,13 @@ jobs:
         with:
           path: _site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v5
